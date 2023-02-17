@@ -37,10 +37,11 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 h1 {
-  font-size: 100px;
+  font-size: clamp(16px, 4.5rem, 15rem);
   margin-bottom: 0;
 }
 
@@ -48,6 +49,14 @@ h2 {
   font-size: 32px;
   font-weight: normal;
   color: var(--on-background-alt);
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  color: var(--secondary-color);
 }
 
 /* Navigation */
@@ -84,14 +93,17 @@ a:focus {
 /* About Section */
 .about-container {
   display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
 }
 
 .image-container {
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   padding: 10px 20px;
-  margin-right: 25px;
-  width: auto;
+  margin: 25px;
+  width: 14rem;
   background: var(--background);
   box-shadow: var(--box-shadow);
 }
@@ -170,7 +182,7 @@ p {
 
 /* Contact Section */
 .fab {
-  font-size: 100px;
+  font-size: 50px;
   margin-right: 50px;
   cursor: pointer;
   color: var(--primary-color);
