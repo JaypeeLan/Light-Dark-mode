@@ -1,22 +1,24 @@
-const toggleSwitch = document.querySelector('input[type="checkbox"]');
-const nav = document.getElementById("nav");
-const toggleIcon = document.getElementById("toggle-icon");
-const image1 = document.getElementById("image1");
-const image2 = document.getElementById("image2");
-const image3 = document.getElementById("image3");
-const textBox = document.getElementById("text-box");
+const toggleSwitch = document.querySelector(
+  'input[type="checkbox"]'
+)! as HTMLInputElement;
+const nav = document.getElementById("nav")! as HTMLElement;
+const toggleIcon = document.getElementById("toggle-icon")! as HTMLElement;
+const image1 = document.getElementById("image1")! as HTMLImageElement;
+const image2 = document.getElementById("image2")! as HTMLImageElement;
+const image3 = document.getElementById("image3")! as HTMLImageElement;
+const textBox = document.getElementById("text-box")! as HTMLElement;
 
-const USE_DARK_THEME = "dark";
-const USE_LIGHT_THEME = "light";
+const USE_DARK_THEME: string = "dark";
+const USE_LIGHT_THEME: string = "light";
 
 // toggle images
-const imageToggle = (color) => {
+const imageToggle = (color: string) => {
   image1.src = `img/undraw_proud_coder_${color}.svg`;
   image2.src = `img/undraw_feeling_proud_${color}.svg`;
   image3.src = `img/undraw_conceptual_idea_${color}.svg`;
 };
 
-const toggleDarkLightMode = (isDark) => {
+const toggleDarkLightMode = (isDark: string) => {
   nav.style.backgroundColor = isDark
     ? "rgb(0 0 0 / 50%)"
     : "rgb(255 255 255 / 50%)";
@@ -31,7 +33,7 @@ const toggleDarkLightMode = (isDark) => {
 };
 
 // toggle theme
-const switchTheme = (e) => {
+const switchTheme = (e: any) => {
   if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
@@ -56,6 +58,5 @@ if (currentTheme) {
 
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
-    darkMode();
   }
 }

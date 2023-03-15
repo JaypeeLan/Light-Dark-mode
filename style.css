@@ -181,9 +181,15 @@ p {
 }
 
 /* Contact Section */
+#contact .social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: space-between;
+}
+
 .fab {
   font-size: 50px;
-  margin-right: 50px;
   cursor: pointer;
   color: var(--primary-color);
 }
